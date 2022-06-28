@@ -9,19 +9,26 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .app-title.navbar.navbar-expand-md.navbar-light.bg-light 
-      .navbar-brand Romuse
-      ul.navbar-nav.ml-auto
-          - if current_user
-            li.nav-item ii
-            - if current_user.admin?
-                li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
-            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-          - else
-            li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
+    .header.app-title.navbar.navbar-expand-md.navbar-dark.bg-dark 
+      .container
+        .col.navbar-brand =link_to image_tag("Romuse.png"), '/'
+        .col
+        .col
+        ul.col.navbar-nav.ml-auto
+            - if current_user
+              li.nav-item ii
+              - if current_user.admin?
+                  li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
+              li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-secondary'
+            - else
+              li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-primary'
     .container
     - if flash.notice.present?
         .alert.alert-success= flash.notice
 
 
+    .container
     = yield
+  
+    .footer
+      p © 2022 Takumi.INC.
