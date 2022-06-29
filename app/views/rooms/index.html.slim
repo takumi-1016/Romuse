@@ -1,2 +1,14 @@
-h1 Rooms#index
-p Find me in app/views/rooms/index.html.slim
+.container-fluid.room 
+    .pb-4 
+    .row
+        -@rooms.each do |room|
+            .col-sm-6.col-lg-4.col-xl-3.room-frame-innner
+                .room-image-out
+                    =room.room_image
+                .room-profile
+                    p.room-profile-name
+                        =room.name
+                    p.room-profile-city
+                        =room.location
+                    p.room-profile-price.price-icon
+                        =room.price

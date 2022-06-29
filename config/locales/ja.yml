@@ -8,12 +8,15 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     models:
-      task: 
+      room: 
     attributes:
-      task:
+      room:
         id: ID
         name: 名称
-        description: 詳しい説明
+        introduction: 部屋の詳細
+        price: 一泊あたりの料金
+        location: 住所
+        room_image: 宿の画像
         created_at: 登録情報
         updated_at: 更新日時
       user:

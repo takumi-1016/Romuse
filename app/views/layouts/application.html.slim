@@ -12,13 +12,14 @@ html
     .header.app-title.navbar.navbar-expand-md.navbar-dark.bg-dark 
         .col.navbar-brand =link_to image_tag("Romuse.png"), '/'
         .col
-        .col
+
         ul.col.navbar-nav.ml-auto
             - if current_user
-              li.nav-item ii
               - if current_user.admin?
                   li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
               li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-secondary'
+              li.nav-item= link_to '宿泊施設登録', new_room_path, class: 'btn btn-info'
+              li.nav-item= link_to '宿泊施設一覧', rooms_path, class: 'btn btn-light'
             - else
               li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-primary login'
               li.nav-item= link_to  "新規登録", new_user_path, class: 'btn btn-success newuser' 
