@@ -1,0 +1,15 @@
+.container-fluid.room 
+    .pb-4 
+    .row
+        -@rooms.each do |room|
+            .col-sm-6.col-lg-4.col-xl-3
+                .room-frame-inner
+                    .room-image-out
+                        =image_tag room.room_image.to_s, class: 'room-image'
+                    .room-profile
+                        p.room-profile-name
+                            =room.name
+                        p.room-profile-city
+                            =room.location
+                        p.room-profile-price.price-icon
+                            =room.price

@@ -1,6 +1,51 @@
-h1 ユーザー編集
-.nav.justify-content-end 
-    = link_to  "一覧", users_path, class: 'nav-link' 
-//ローカルtrueはRails6からデフォになっているため入らないらしい
-=render partial: "form", locals: {user: @user}
+-if @user.errors.present?
+    ul#error_explanation 
+    - user.errors.full_messages.each do |message|
+        li = message
 
+.container.container-fluid.user
+    .row
+        .user-view
+            .user-view-box
+                .edit-user
+                    = form_with model: @user, lacal: true do |f| 
+                        .update-content
+                            .row
+                            h5 アカウント
+                        .update-content
+                            .row
+                                .col-md-6.offset-md-3
+                                    .icon-box
+                                        =image_tag  @user.icon_image.to_s, class: 'icon-image host-icon'       
+                        .update-content
+                            .row
+                                =f.label :icon_image,'アイコン画像', class: 'col-md-6 required-a'
+                                =f.file_field :icon_image, class: 'mb-4 col-md-9', id: 'room_room_image'    
+                        .update-content
+                            .row
+                                =f.label :name,'名前', class: 'col-md-6 required-a'    
+                                =f.text_field :name, class: 'form-control mb-4 col-md-9',placefolder: '名前を入力'
+                        .update-content
+                            .row
+                                =f.label :introduction,'自己紹介', class: 'col-md-6 required-a'    
+                                =f.text_area :introduction, class: 'form-control mb-4 col-md-9',placefolder: '自己紹介を入力'
+                        .update-content
+                            .row
+                                =f.label :email,'メールアドレス', class: 'col-md-6 required-a'    
+                                =f.text_field :email, class: 'form-control mb-4 col-md-9',value: current_user.email
+                        .update-content
+                            .row
+                                =f.label :password,'パスワード', class: 'col-md-6 required-a'    
+                                =f.password_field :password, class: 'form-control mb-4 col-md-9',value: current_user.password
+                        .update-content
+                            .row
+                                =f.label :password,'パスワード', class: 'col-md-6 required-a'    
+                                =f.password_field :password,'', class: 'form-control mb-4 col-md-9',placefolder: 'パスワードを変更する場合入力'
+                        .update-content
+                             .row
+                                =f.label :password_confirmation,'パスワード（確認）',class: 'col-md-6 required-a'    
+                                =f.password_field :password_confirmation,class: 'form-control mb-4 col-md-9',placefolder: '変更後のパスワードをもう一度入力'
+                        =f.submit '登録する', class: 'btn btn-primary'
+
+
+        

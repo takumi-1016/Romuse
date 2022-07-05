@@ -1,14 +1,20 @@
-.container-fluid.room 
-    .pb-4 
-    .row
-        -@rooms.each do |room|
-            .col-sm-6.col-lg-4.col-xl-3.room-frame-innner
-                .room-image-out
-                    =room.room_image
-                .room-profile
-                    p.room-profile-name
-                        =room.name
-                    p.room-profile-city
-                        =room.location
-                    p.room-profile-price.price-icon
-                        =room.price
+.container
+    .container-fluid.room-posts
+        .pb-4  登録済みルーム一覧
+        table.table.table-hover 
+            thead.thead-default
+                tr 
+                    th ルーム画像
+                    th ルーム名
+                    th ルーム紹介
+                    th 料金
+                    th 作成日
+                tbody
+                -@rooms.each do |room|
+                    tr 
+                        td =link_to image_tag(room.room_image.to_s),room_path(room), class: 'room-posts-image'
+                        td.posts-name =room.name
+                        td.posts-content =room.introduction
+                        td.price-icon =room.price
+                        td =room.created_at
+                            

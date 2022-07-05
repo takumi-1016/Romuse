@@ -1,3 +1,91 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user-new {
+    width: 100%;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.user-new .user-nav-pc {
+    height: 100vh;
+}
+.user-new .user-nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 100px 15px;
+}
+.d-none {
+    display: none!important;
+    padding: 100px 15px;
+}
+.user-new .user-view {
+    background-color: #F6F8F9;
+    border-left: 2px solid #000000;
+}
+.user-new .user-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 50px auto;
+}
+.user-new .update-content {
+    border-bottom: 1px solid #eaedef;
+    padding: 20px;
+    margin: 0 15px;
+    font-size: 16px;
+}
+.user-new .update-content label {
+    font-weight: bold;
+}
+.user-new .user-nav-pc .active {
+    border-right: 3px solid #4a90e2;
+}
+.user-nav-pc ul{
+    margin-top: 40px;
+    font-size: 20px;
+}
+.active li{
+    color: rgb(57, 57, 57);
+    text-decoration: none;
+}
+.user {
+    width: 100%;
+}
+.user .user-nav-pc {
+    height: 100vh;
+}
+.user .user-view {
+    background-color: #F6F8F9;
+    border-left: 2px solid #e2e2e2;
+}
+.user .user-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 30px auto;
+}
+.user .update-content {
+    border-bottom: 1px solid #eaedef;
+    padding: 20px;
+    margin: 0 15px;
+    font-size: 16px;
+}
+.user .update-content label {
+    font-weight: bold;
+}
+.icon-box {
+    text-align: center;
+}
+.host-icon {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}

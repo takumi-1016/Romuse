@@ -1,10 +1,12 @@
-h1 ログイン
-
-= form_with scope: :session, local: true do |f|
-    .form-group 
-        =f.label :email, 'メールアドレス'
-        =f.text_field :email , class:'form-control', id: 'session_email'
-    .form-group 
-        =f.label :password, 'メールアドレス'
-        =f.password_field :password , class:'form-control', id: 'session_password'
-    =f.submit 'ログインする', class: 'btn btn-primary'
+.container.device
+    .device_frame
+        p.my-4 ログイン
+        .devise_inner
+            = form_with scope: :session, local: true do |f|
+                .form-group.form-row
+                    =f.text_field :email , class:'form-control', id: 'session_email',placeholder: 'メールアドレス'
+                .form-group.form-row 
+                    =f.password_field :password , class:'form-control', id: 'session_password',placeholder: 'パスワード'
+                .field.form-row
+                =f.submit 'ログインする', class: 'btn btn-primary'
+            

@@ -20,6 +20,7 @@ html
               li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-secondary'
               li.nav-item= link_to '宿泊施設登録', new_room_path, class: 'btn btn-info'
               li.nav-item= link_to '宿泊施設一覧', rooms_path, class: 'btn btn-light'
+              li.nav-item= link_to  'ユーザー情報の編集', edit_user_path(@user), class: 'btn btn-primary mr-3'
             - else
               li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-primary login'
               li.nav-item= link_to  "新規登録", new_user_path, class: 'btn btn-success newuser' 

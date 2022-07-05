@@ -1,9 +1,10 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    @rooms = current_user.rooms.all
   end
 
   def show
+    @room = Room.find(params[:id])
   end
 
   def new
@@ -11,7 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    room = Room.new(room_params)
+    room = current_user.rooms.new(room_params)
     room.save!
     redirect_to home_top_url, notice:"宿を登録しました。"
   end

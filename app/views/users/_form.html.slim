@@ -2,22 +2,18 @@
  ul#error_explanation 
    - user.errors.full_messages.each do |message|
      li = message
-.container
-    = form_with model: @user, lacal: true do |f| 
-        .form-group
-            =f.label :name,'名前'
-            =f.text_field :name, class: 'form-control'
-        .form-group
-            =f.label :email, 'メールアドレス'
-            =f.text_field :email, rows: 5, class: 'form-contorl'
-        .form-check
-            =f.label :admin, class: 'form-check-label' do 
-                =f.check_box :admin, class: 'form-check-input'
-                |管理者権限
-        .form-group
-            =f.label :password,'パスワード'
-            =f.password_field :password, class: 'form-control'
-        .form-group
-            =f.label :password_confirmation,'パスワード（確認）'
-            =f.password_field :password_confirmation, class: 'form-control'
-        =f.submit '登録する', class: 'btn btn-primary'
+.container.device
+    .device_frame
+        p.my-4 新しいアカウントを作成
+        .devise_inner
+            = form_with model: @user, lacal: true do |f| 
+                .form-group.field.form-row
+                    =f.text_field :name, class: 'form-control',placeholder: 'ユーザー名'
+                .form-group.field.form-row
+                    =f.text_field :email, class: 'form-control',placeholder: 'メールアドレス'
+                .form-group.field.form-row
+                    =f.password_field :password, class: 'form-control',placeholder: 'パスワード'
+                .form-group.field.form-row
+                    =f.password_field :password_confirmation, class: 'form-control',placeholder: 'パスワード（確認）'
+                .field.form-row
+                =f.submit '新しいアカウントを登録する', class: 'btn btn-primary'

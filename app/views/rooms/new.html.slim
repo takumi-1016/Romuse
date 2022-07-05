@@ -33,7 +33,7 @@
                     .form-groupe.update-content
                         .row    
                             =f.label :room_image
-                            =f.text_field :room_image, class: 'form-control', id: 'room_room_image'
+                            =f.file_field :room_image, class: 'form-control', id: 'room_room_image'
                     .update-content
                      = f.submit nil, class: 'btn btn-primary'
 

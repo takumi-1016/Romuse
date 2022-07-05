@@ -1,5 +1,4 @@
-h1 ユーザー登録
-.nav.justify-content-end 
-    = link_to  "一覧", users_path, class: 'nav-link' 
-//ローカルtrueはRails6からデフォになっているため入らないらしい
-=render partial: "form", locals: {user: @user}
+.container
+    //ローカルtrueはRails6からデフォになっているため入らないらしい
+    =render partial: "form", locals: {user: @user}
+    = link_to '既に登録済みの方はログイン', login_path
