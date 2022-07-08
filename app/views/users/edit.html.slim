@@ -32,15 +32,15 @@
                         .update-content
                             .row
                                 =f.label :email,'メールアドレス', class: 'col-md-6 required-a'    
-                                =f.text_field :email, class: 'form-control mb-4 col-md-9',value: current_user.email
+                                =f.text_field :email, class: 'form-control mb-4 col-md-9'
                         .update-content
                             .row
                                 =f.label :password,'パスワード', class: 'col-md-6 required-a'    
-                                =f.password_field :password, class: 'form-control mb-4 col-md-9',value: current_user.password
+                                =f.password_field :password, class: 'form-control mb-4 col-md-9'
                         .update-content
                             .row
                                 =f.label :password,'パスワード', class: 'col-md-6 required-a'    
-                                =f.password_field :password,'', class: 'form-control mb-4 col-md-9',placefolder: 'パスワードを変更する場合入力'
+                                =f.password_field :password, class: 'form-control mb-4 col-md-9',placefolder: 'パスワードを変更する場合入力'
                         .update-content
                              .row
                                 =f.label :password_confirmation,'パスワード（確認）',class: 'col-md-6 required-a'    

@@ -1,4 +1,3 @@
 .container
-    //ローカルtrueはRails6からデフォになっているため入らないらしい
     =render partial: "form", locals: {user: @user}
     = link_to '既に登録済みの方はログイン', login_path

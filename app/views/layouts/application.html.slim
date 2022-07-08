@@ -9,21 +9,26 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .header.app-title.navbar.navbar-expand-md.navbar-dark.bg-dark 
-        .col.navbar-brand =link_to image_tag("Romuse.png"), '/'
-        .col
-
-        ul.col.navbar-nav.ml-auto
-            - if current_user
-              - if current_user.admin?
-                  li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
-              li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-secondary'
-              li.nav-item= link_to '宿泊施設登録', new_room_path, class: 'btn btn-info'
-              li.nav-item= link_to '宿泊施設一覧', rooms_path, class: 'btn btn-light'
-              li.nav-item= link_to  'ユーザー情報の編集', edit_user_path(@user), class: 'btn btn-primary mr-3'
-            - else
-              li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-primary login'
-              li.nav-item= link_to  "新規登録", new_user_path, class: 'btn btn-success newuser' 
+    .header
+      .header-inner
+        .header-left-nav
+           =link_to image_tag("Romuse.png"), '/'
+           = link_to '宿泊施設一覧', home_posts_path
+        .header-right-nav
+          - if current_user
+              .nav-item
+                li.nav-item= current_user.name
+              .nav-item
+                = image_tag current_user.icon_image.to_s, class: 'mx-3 p-1 host-icon nav-trigger'
+                ul.header-nav-menu
+                    li= link_to 'ユーザー一覧', users_path
+                    li= link_to 'ログアウト', logout_path, method: :delete
+                    li= link_to '宿泊施設登録', new_room_path
+                    li= link_to '登録した施設', rooms_path
+                    li= link_to 'マイページ', @user
+          - else
+                    li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-primary login'
+                    li.nav-item= link_to  "新規登録", new_user_path, class: 'btn btn-success newuser' 
     .notice
     - if flash.notice.present?
         .alert.alert-success= flash.notice

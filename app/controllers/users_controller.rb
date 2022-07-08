@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to user_url(@user),notice: "ユーザー「#{@user.name}」を登録しました。"
+      session[:user_id] = @user.id
+      redirect_to edit_user_url(@user),notice: "ユーザー「#{@user.name}」を登録しました。"
     else
       render :new
     end   
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to user_url(@user),notice: "ユーザー「#{@user.name}」を更新しました。"
+      redirect_to root_url(@user),notice: "ユーザー「#{@user.name}」を更新しました。"
     else
       render :edit
     end   
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :admin, :password, :password_confirmation)    
+    params.require(:user).permit(:name, :email, :admin, :password, :password_confirmation, :icon_image)    
   end
 
   def require_admin

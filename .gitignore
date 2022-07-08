@@ -52,4 +52,6 @@ doc/
 .idea
 .secret
 test/
-public/upload
+/public/uploads/
+
+

@@ -7,6 +7,8 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+  before_action :login_required
+  
   def new
     @room = Room.new
   end
