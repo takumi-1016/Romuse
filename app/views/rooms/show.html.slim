@@ -1,0 +1,42 @@
+.container.room-show
+    .row
+        .col-md-8
+            =image_tag @room.room_image.to_s, class: 'room-image'
+            .room-show-detail
+                .room-show-detail-icon
+                    =link_to image_tag (@user.icon_image), top_home_path, class: 'host-icon' 
+                .room-show-profile
+                    p.room-show-profile-name 
+                        =room.name
+                    p.room-show-profile-address
+                        =room.location
+            p.room-show-detile-content 
+                =room.introduction
+        .col-md-4
+            .room-show-nav
+                h5.price-icon
+                    =room.price
+                .room-show-detile-content
+                    = form_with model: @room, local: true do |f|
+                        .form-groupe.update-content
+                        .row    
+                            =f.label :name
+                            =f.text_field :name, class: 'form-control', id: 'room_name'
+                        .form-groupe.update-content
+                            .row    
+                                =f.label :introduction
+                                =f.text_area :introduction, class: 'form-control', id: 'room_introduction'
+                        .form-groupe.update-content
+                            .row    
+                                =f.label :price
+                                =f.number_field :price, class: 'form-control', id: 'room_price'
+                        .form-groupe.update-content
+                            .row    
+                                =f.label :location
+                                =f.text_field :location, class: 'form-control', id: 'room_location'
+                        .form-groupe.update-content
+                            .row    
+                                =f.label :room_image
+                                =f.file_field :room_image, class: 'form-control', id: 'room_room_image'
+                        .update-content
+                        = f.submit nil, class: 'btn btn-primary'

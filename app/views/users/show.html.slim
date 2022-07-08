@@ -1,0 +1,25 @@
+-if @user.errors.present?
+    ul#error_explanation 
+    - user.errors.full_messages.each do |message|
+        li = message
+
+.container.container-fluid.user
+    .row
+        .user-view
+            .user-view-box
+                .edit-user
+                        .update-content
+                            .row
+                            h5 アカウント
+                        .update-content
+                            .row
+                                .col-md-6.offset-md-3
+                                    .icon-box
+                                        =image_tag  @user.icon_image.to_s, class: 'icon-image host-icon'       
+                        .update-content
+                            .row
+                                =@user.name
+                        .update-content
+                            .row
+                                =@user.introduction
+                        = link_to  '編集', edit_user_path, class: 'btn btn-primary mr-3'

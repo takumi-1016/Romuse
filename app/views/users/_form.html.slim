@@ -1,0 +1,19 @@
+-if user.errors.present?
+ ul#error_explanation 
+   - user.errors.full_messages.each do |message|
+     li = message
+.container.device
+    .device_frame
+        p.my-4 新しいアカウントを作成
+        .devise_inner
+            = form_with model: @user, lacal: true do |f| 
+                .form-group.field.form-row
+                    =f.text_field :name, class: 'form-control',placeholder: 'ユーザー名'
+                .form-group.field.form-row
+                    =f.text_field :email, class: 'form-control',placeholder: 'メールアドレス'
+                .form-group.field.form-row
+                    =f.password_field :password, class: 'form-control',placeholder: 'パスワード'
+                .form-group.field.form-row
+                    =f.password_field :password_confirmation, class: 'form-control',placeholder: 'パスワード（確認）'
+                .field.form-row
+                =f.submit '新しいアカウントを登録する', class: 'btn btn-primary'

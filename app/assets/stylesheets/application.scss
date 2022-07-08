@@ -1,0 +1,157 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+*{
+    box-sizing: border-box;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    padding: 10px 30px;
+    background-color: #000000;
+}
+.header-left-nav {
+    float: left;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.header-right-nav {
+    float: right;
+    align-items: center;
+}
+.header .nav-item {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+}
+.host-icon {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+.header-nav-menu {
+    background-color: #fff;
+    border: 3px solid #F6F8F9;
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    padding: 15px;
+    z-index: 1000;
+}
+.header-nav-menu li {
+    line-height: 30px;
+    font-size: 16px;
+    padding: 3px 5px;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footerFixed{
+    min-height: 50vh; 
+    position: relative;
+    padding-bottom: 180px; 
+    box-sizing: border-box;
+   
+}
+a{
+    text-decoration: none;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    margin-top: 64px;
+    padding-top: 90px;
+    background-color: #111;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+}
+.alert{
+    position: relative;
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 0ch;
+}
+.login{
+    margin-right: 20px;
+    margin-left: 236px;
+}
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+ul {
+    list-style: none;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.device {
+    padding-top: 36px;
+    font-size: 16px;
+}
+.device_frame {
+    max-width: 600px;
+    text-align: center;
+    padding: 24px;
+    margin: 0px auto;
+    background-color: white;
+    border-radius: 4px;
+    border: #111;
+}
+.device p {
+    font-size: 16px;
+}
+.device_inner {
+    width: 360px;
+    margin: 0px auto;
+}
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+.form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
